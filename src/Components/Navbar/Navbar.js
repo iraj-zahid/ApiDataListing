@@ -1,21 +1,15 @@
-import { useState } from "react"
-
 const Navbar = (prop) => {
   const searchedvalue = (e) => {
-    prop.setSearchValue(e.target.value)
+    prop.setSearchValue(e.target.value.toLowerCase())
   }
   return (
     <>
-
-
       <div className="w-full p-[1%] flex items-end justify-center gap-[12%] border-gray-300 border-3">
         <h1 className="Moderustic ">SMRT</h1>
-       
         <input onChange={searchedvalue} type="text" id="search-navbar" class="block w-[70%] p-4  text-lg text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search..." />
-
       </div>
     </>
 
   )
 }
-export default Navbar
+export default Navbar;

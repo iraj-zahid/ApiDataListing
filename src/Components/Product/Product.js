@@ -1,76 +1,25 @@
-import { useEffect, useState } from "react"
-import axios from "axios";
-import { useNavigate } from 'react-router-dom';
-import { ShimmerThumbnail, ShimmerTitle, ShimmerText, ShimmerPostDetails } from "react-shimmer-effects";
-
+import useApi from "../../Hooks/UseApi/useApi";
+import SearchedResult from "../SearchedResult/SearchedResult";
+import ShimmerApi from "../Shimmer/ShimmerApi/ShimmerApi";
+import Card from '../Card/Card';
 
 const Product = (prop) => {
-    const navigate = useNavigate()
-    const [data, setData] = useState(null)
-    const [shimmerApiData, setShimmerApiData] = useState([1, 2, 3, 4, 5, 6, 7, 8])
-    useEffect(() => {
-        axios.get("https://dummyjson.com/products")
-            .then(res => {
-                setData(res.data.products)
-            }).catch(err => {
-                console.log(err)
-            })
-    }, [])
-    const filterValue = data && data.filter((e) =>
-        e.category.toLowerCase().includes(prop.searchValue)
-
-    )
-    console.log(filterValue);
-    const goToDetail = (e) => {
-        navigate("/detailpage", { state: e })
-        console.log(e);
-
-    }
+    const apiData = useApi()
+    // navigate to detailpage
+    
     return (
         <>
             <div className="w-full p-[1%] bg-[#fcfcfc]">
                 <h1 className="text-3xl IBM p-[2%]">{prop.searchValue ? "SEARCHED VALUE" : "NEW PRODUCTS"}</h1>
                 <div className="w-full p-[1%] flex flex-wrap  items-center gap-6">
                     {/* card */}
-                    {prop.searchValue ? filterValue.map((data) => {
+                    {prop.searchValue ? <SearchedResult searchValue={prop.searchValue} /> : apiData ? apiData.map((data) => {
                         return (
                             <>
-                                <div onClick={() => goToDetail(data)} className="w-[23%] max-[614px]:w-[30%] p-[1%] ">
-                                    <div className="w-full px-[10%] py-[30%] bg-white rounded-xl zoom cursor-pointer"><img src={data.thumbnail} /></div>
-                                    <h1 className="text-3xl p-[1%] Moderustic">{data.title}</h1>
-                                    <div> <span><strike className="Moderustic">$700&nbsp;</strike></span><span className="text-xl font-bold Moderustic">&nbsp;${data.price}</span></div>
-                                    <div className="gap-6 p-[1%]">
-                                        <span>ratings</span>
-                                        <span className="Moderustic">({data.stock})</span>
-                                    </div>
-                                </div>
+                               <Card data={data}/>
                             </>
                         )
-                    }) : data ? data.map((data) => {
-                        return (
-                            <>
-                                <div onClick={() => goToDetail(data)} className="w-[23%] max-[614px]:w-[30%] p-[1%] ">
-                                    <div className="w-full px-[10%] py-[30%] bg-white rounded-xl zoom cursor-pointer"><img src={data.thumbnail} /></div>
-                                    <h1 className="text-3xl p-[1%] Moderustic">{data.title}</h1>
-                                    <div> <span><strike className="Moderustic">$700&nbsp;</strike></span><span className="text-xl font-bold Moderustic">&nbsp;${data.price}</span></div>
-                                    <div className="gap-6 p-[1%]">
-                                        <span>ratings</span>
-                                        <span className="Moderustic">({data.stock})</span>
-                                    </div>
-                                </div>
-                            </>
-                        )
-                    }) : shimmerApiData.map((e) => {
-                        return (
-                            <>
-                                <div className="w-[23%] max-[614px]:w-[30%] p-[1%] ">
-                                    <ShimmerThumbnail className="w-full px-[10%] py-[30%] bg-white rounded-xl zoom cursor-pointer" rounded />
-                                    <ShimmerTitle line={2} gap={10} variant="primary" />
-                                    <ShimmerText line={5} gap={10} />
-                                </div>
-                            </>
-                        )
-                    })}
+                    }): <ShimmerApi/>}
 
                 </div>
             </div>
@@ -79,3 +28,9 @@ const Product = (prop) => {
 }
 export default Product;
 // onChange={searchedvalue}
+// onClick={() => goToDetail(data)}
+
+
+
+
+
