@@ -12,6 +12,8 @@
     "react-dom": "^18.3.1",
     "react-fb-image-grid": "^0.1.5",
     "react-scripts": "5.0.1",
+    "react-shimmer": "^3.2.0",
+    "react-shimmer-effects": "^1.0.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
