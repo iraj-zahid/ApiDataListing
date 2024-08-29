@@ -7,7 +7,7 @@ const SearchedResult = (prop) => {
     const apiData = useApi()
     // filter apis data
     const filterValue = apiData && apiData.filter((e) =>
-        e.category.toLowerCase().includes(prop.searchValue)
+        e.title.toLowerCase().includes(prop.searchValue)
     )
     // navigate to deatil page func
     const goToDetail = (e) => {
