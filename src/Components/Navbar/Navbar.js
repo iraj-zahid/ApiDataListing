@@ -1,15 +1,30 @@
-const Navbar = (prop) => {
-  const searchedvalue = (e) => {
-    prop.setSearchValue(e.target.value.toLowerCase())
-  }
+import { Link, Outlet } from "react-router-dom";
+import Footer from "../Footer/Footer";
+const Navbar = () => {
+
   return (
     <>
-      <div className="w-full p-[1%] flex items-end justify-center gap-[12%] border-gray-300 border-3">
-        <h1 className="Moderustic ">SMRT</h1>
-        <input onChange={searchedvalue} type="text" id="search-navbar" class="block w-[70%] p-4  text-lg text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search..." />
-      </div>
-    </>
 
+      <nav>
+        <div className="w-full pl-[3%] flex items-center gap-[5%] border-gray-300 border-b-2 justify-between">
+          <h3 className="IBM flex justify-center items-center">SMRT</h3>
+         
+          <ul className=" m-[2%] w-[100%] max-[435px]:text-2xl pr-[3%] flex items-center max-[1000px]:justify-end justify-center gap-[7%] text-3xl Moderustic">
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/signup">Signup&nbsp;Now</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <Outlet />
+      <Footer />
+    </>
   )
 }
 export default Navbar;
