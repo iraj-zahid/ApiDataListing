@@ -5,7 +5,7 @@ import { ShimmerThumbnail, ShimmerTitle, ShimmerText, ShimmerPostDetails } from 
 
 
 
-const Detail = () => {
+const ProductDetail = () => {
   const location = useLocation()
   const [data, setData] = useState(null)
 
@@ -14,8 +14,6 @@ const Detail = () => {
 
   }, [])
  
-  console.log(data);
-
   return (
     <>
       <div className="w-full p-[3%] ">
@@ -60,4 +58,4 @@ const Detail = () => {
     </>
   )
 }
-export default Detail
+export default ProductDetail

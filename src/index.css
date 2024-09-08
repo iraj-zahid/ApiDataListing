@@ -9,27 +9,12 @@
   color: #fcfcfc;
 }
 
-.trendBanner{
-  background-image: url(./Assets/cellphonebrading.webp);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.saleison{
-  background-image: url(./Assets/salebanner.jpg);
-  background-size: contain;
-  background-position: center;
-  animation: back 20s linear infinite;
-  background-position: 0 0;
-  line-height: 160px;
-}
 @keyframes back{
   100%{
     background-position: 2000px 0;
   }
 }
 .cardimg{
-  background-image: url(./Assets/now-or-never-neon-sign-5950569_1920.jpg);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -52,10 +37,4 @@
 }
 .zoom:hover {
   transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-}
-.hamburger{
-  background-image: url(./Assets/hamburger.png);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
 }

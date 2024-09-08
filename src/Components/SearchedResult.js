@@ -1,7 +1,7 @@
-import useApi from "../../Hooks/UseApi/useApi";
+import useApi from "../Utils/Hooks/UseApi/useApi";
 import { useEffect, useState } from "react"
 import { useNavigate } from 'react-router-dom';
-import Card from "../Card/Card";
+import Card from "./Card";
 const SearchedResult = (prop) => {
     const navigate = useNavigate()
     const apiData = useApi()
@@ -13,16 +13,15 @@ const SearchedResult = (prop) => {
     const goToDetail = (e) => {
         navigate("/detailpage", { state: e })
     }
-    
-    return(
+
+    return (
         <>
-       {apiData &&  filterValue.map((data) => {
-                        return (
-                            <>
-                             <Card data={data}/>
-                            </>
-                        )
-                    })}
+            {apiData && filterValue.map((data) => {
+                return (
+                    <>
+                        <Card data={data} />
+                    </>
+                )})}
         </>
     )
 }

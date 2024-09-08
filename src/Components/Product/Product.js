@@ -1,12 +1,12 @@
-import useApi from "../../Hooks/UseApi/useApi";
-import SearchedResult from "../SearchedResult/SearchedResult";
+import useApi from "../../Utils/Hooks/UseApi/useApi";
+import SearchedResult from "../SearchedResult";
 import ShimmerApi from "../Shimmer/ShimmerApi/ShimmerApi";
-import Card from '../Card/Card';
+import Card from '../Card';
 
 const Product = (prop) => {
     const apiData = useApi()
     // navigate to detailpage
-    
+
     return (
         <>
             <div className="w-full p-[1%] bg-[#fcfcfc]">
