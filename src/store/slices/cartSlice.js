@@ -11,10 +11,10 @@ const cartSlice = createSlice({
             state.splice(action.payload,1)
         },
         quantInc(state, action){
-            state[action.payload].quant++
+            state[action.payload].quant++            
         },
         quantDec(state, action){
-            if(state[action.payload].quant =+ 0){
+            if(state[action.payload].quant >= 0){
                 state[action.payload].quant--
             }
         },

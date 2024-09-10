@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import {add} from "../store/slices/cartSlice"
+import {add,quantInc} from "../store/slices/cartSlice"
 import {useDispatch,useSelector} from "react-redux"
 const Card = (prop) => {
     const cartProduct = useSelector((item) => item.cart) 
@@ -15,7 +15,10 @@ const Card = (prop) => {
         if(filteredCartItem.length === 0){
         dispatch(add({data:prop.data,quant:0}))
         }
-        
+        else{
+            dispatch(quantInc(cartProduct.indexOf(filteredCartItem[0])))
+            // console.log(filteredCartItem)
+        }
     }
     return (
         <>
