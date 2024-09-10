@@ -6,20 +6,15 @@ const SearchedResult = (prop) => {
     const navigate = useNavigate()
     const apiData = useApi()
     // filter apis data
-    const filterValue = apiData && apiData.filter((e) =>
-        e.title.toLowerCase().includes(prop.searchValue)
+    const filterValue = apiData && apiData.filter((filteredEvent) =>
+        filteredEvent.title.toLowerCase().includes(prop.searchValue)
     )
-    // navigate to deatil page func
-    const goToDetail = (e) => {
-        navigate("/detailpage", { state: e })
-    }
-
     return (
         <>
             {apiData && filterValue.map((data) => {
                 return (
                     <>
-                        <Card data={data} />
+                      <Card data={data} />
                     </>
                 )})}
         </>

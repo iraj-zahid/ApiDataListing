@@ -1,13 +1,9 @@
-
-
 const Signup = () => {
-    
-   
   
     return(
         <>
-       <div className=" w-[full] p-[5%] pt-[4%] flex items-center justify-center">
-       <div className={` w-[30%] p-[5%] bg-[black] flex flex-col  rounded-xl`}>
+        <div className=" w-[full] p-[5%] pt-[4%] flex items-center justify-center">
+        <div className={` w-[30%] p-[5%] bg-[black] flex flex-col  rounded-xl`}>
         <h5 className="pl-6 text-blue-300 IBM text-2xl">Signup</h5>
                 <div className="w-full p-6 pb-16 pt-[8%] flex flex-col items-center justify-center">
                     <div class="w-full ">
@@ -41,7 +37,7 @@ const Signup = () => {
                     </div>
                 </div>
             </div>
-       </div>
+        </div>
         </>
     )
 }
