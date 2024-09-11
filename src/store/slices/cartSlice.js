@@ -11,16 +11,27 @@ const cartSlice = createSlice({
             state.splice(action.payload,1)
         },
         quantInc(state, action){
-            state[action.payload].quant++            
+            state[action.payload].quant++    
+            
+            // individual value total
+            const actualPrice = state[action.payload].data.price
+            state[action.payload].total += actualPrice
         },
         quantDec(state, action){
-            if(state[action.payload].quant >= 0){
+            if(state[action.payload].quant > 1){
                 state[action.payload].quant--
+            }
+
+            // individual value total decreasing 
+            const actualPrice = state[action.payload].data.price
+            if(state[action.payload].total > state[action.payload].data.price){
+                state[action.payload].total -= actualPrice
             }
         },
         removeAll(state,action){
             return state = []
-        }
+        },
+       
 
     }
 

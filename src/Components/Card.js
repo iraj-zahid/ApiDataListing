@@ -13,7 +13,7 @@ const Card = (prop) => {
     const addToCart = () => {
 
         if(filteredCartItem.length === 0){
-        dispatch(add({data:prop.data,quant:0}))
+        dispatch(add({data:prop.data,quant:1,total:prop.data.price}))
         }
         else{
             dispatch(quantInc(cartProduct.indexOf(filteredCartItem[0])))
@@ -22,7 +22,7 @@ const Card = (prop) => {
     }
     return (
         <>
-            <div  className="w-[23%] max-[614px]:w-[30%] p-[1%] ">
+            <div  className="w-[23%] max-[614px]:w-[30%] p-[1%] flex flex-col justify-center">
                 <div onClick={() => goToDetail(prop.data)} className="w-full px-[10%] py-[30%] bg-white rounded-xl zoom cursor-pointer"><img src={prop.data.thumbnail} /></div>
                 <h1 className="text-3xl p-[1%] Moderustic">{prop.data.title}</h1>
                 <div> <span><strike className="Moderustic">$700&nbsp;</strike></span><span className="text-xl font-bold Moderustic">&nbsp;${prop.data.price}</span></div>
@@ -30,8 +30,8 @@ const Card = (prop) => {
                     <span>ratings</span>
                     <span className="Moderustic">({prop.data.stock})</span>
                 </div>
-                <button onClick={addToCart} className=" bg-[#c300ffd5] hover:bg-[#71009e] w-[40%] text-white font-bold mt-2  ml-3 rounded h-[30px]">
-                Add to cart
+                <button onClick={addToCart} className=" bg-[#c300ffd5] hover:bg-[#71009e] w-[40%] text-white text-xl mt-2 rounded-lg p-3">
+                Add
                 </button>
             </div>
         </>

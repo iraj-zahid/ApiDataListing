@@ -11,7 +11,7 @@ const Product = (prop) => {
         <>
             <div className="w-full p-[1%] bg-[#fcfcfc]">
                 <h1 className="text-3xl IBM p-[2%]">{prop.searchValue ? "SEARCHED VALUE" : "NEW PRODUCTS"}</h1>
-                <div className="w-full p-[1%] flex flex-wrap  items-center gap-6">
+                <div className="w-full p-[1%] flex flex-wrap justify-center items-center gap-6">
                     {/* card */}
                     {prop.searchValue ? <SearchedResult searchValue={prop.searchValue} /> : apiData ? apiData.map((data) => {
                         return (

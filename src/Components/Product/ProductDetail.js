@@ -2,17 +2,32 @@ import { useState, useEffect } from "react"
 import FbImageLibrary from 'react-fb-image-grid'
 import { useLocation } from "react-router-dom"
 import { ShimmerThumbnail, ShimmerTitle, ShimmerText, ShimmerPostDetails } from "react-shimmer-effects";
-
+import {add,quantInc} from "../../store/slices/cartSlice"
+import {useDispatch,useSelector} from "react-redux"
 
 
 const ProductDetail = () => {
   const location = useLocation()
   const [data, setData] = useState(null)
-
   useEffect(() => {
     setData(location.state)
-
   }, [])
+  const cartProduct = useSelector((item) => item.cart) 
+  const dispatch = useDispatch()
+      
+  // const filteredCartItem =  cartProduct.filter((filterCartItem) => filterCartItem.data.id === data.id)
+  // console.log(filteredCartItem)
+
+  const addToCart = () => {
+
+        // if(filteredCartItem.length === 0){
+        // dispatch(add({data:data,quant:1,total:data.price}))
+        // }
+        // else{
+        //     dispatch(quantInc(cartProduct.indexOf(filteredCartItem[0])))
+        // }
+    } 
+ 
  
   return (
     <>
@@ -29,7 +44,7 @@ const ProductDetail = () => {
             <p className="Moderustic text-2xl m-6">{data.description}</p>
             <p className="Moderustic text-2xl m-6">Product left:-&nbsp;({data.stock})</p>
             <p className="Moderustic text-5xl m-6">${data.price}</p>
-            <button className=" bg-[#c300ffd5] hover:bg-[#71009e] w-[40%] text-white font-bold mt-2  ml-3 rounded h-[55px]">
+            <button onClick={addToCart} className=" bg-[#c300ffd5] hover:bg-[#71009e] w-[40%] text-white font-bold mt-2  ml-3 rounded h-[55px]">
               Add to cart
             </button>
           </div> :
@@ -42,7 +57,7 @@ const ProductDetail = () => {
         </div>
         {/* reviewsection */}
         <div className="w-full  flex justify-center flex-col p-[1%] ">
-          <h1 className="Moderustic text-5xl">Reviews </h1>
+          <p className="Moderustic text-4xl">Reviews </p>
           {data ? data.reviews.map((e) => {
             return <>
               <div className="border-t-2 border-black w-[80%] p-[1%]">
