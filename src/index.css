@@ -4,9 +4,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Moderustic:wght@300..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fascinate+Inline&display=swap');
 
 .checkcolor{
-  color: #7c7c7c88;
+  color: #f1d900;
 }
 
 @keyframes back{
@@ -29,12 +30,42 @@
 .IBM{
   font-family: "IBM Plex Sans", sans-serif;
 }
+.fascinate{
+  font-family: "Fascinate Inline", system-ui;
+}
 .Nanum{
   font-family: "Nanum Gothic", sans-serif;
 }
 .zoom {
-  transition: transform .2s; /* Animation */
+  transition: transform .2s;
 }
 .zoom:hover {
-  transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  transform: scale(1.2); 
+}
+.aboutImg{
+  background-image: url("../public/assets/bghome.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+.contactImg{
+  background-image: url("../public/assets/contactBg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+.contactImgMob{
+  background-image: url("../public/assets/contactBgMob.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: contain;
+  background-position: center;
+}
+.exImg{
+  background-image: url("../public//assets/aboutbg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }

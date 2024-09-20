@@ -5,11 +5,19 @@ import ProductDetail from './Components/Product/ProductDetail';
 import Signup from './View/Signup';
 import About from './View/About';
 import Navbar from './Components/Navbar';
-import Cart from './View/Cart'
+import Cart from './View/Cart';
+import Contact from './View/Contact'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import { useSelector, useDispatch } from 'react-redux';
 
 function App() {
+  const mode = useSelector((state) => state.mode)
+  if(mode == true){
+    document.documentElement.classList.add("dark")
+  }
+  else{
+    document.documentElement.classList.remove("dark")
+  }
   return (
  <>
       <Routes>
@@ -19,6 +27,7 @@ function App() {
           <Route path="signup" element={<Signup/>} />
           <Route path="about" element={<About/>} />
           <Route path="cart" element={<Cart/>} />
+          <Route path="contact" element={<Contact/>} />
         </Route>
       </Routes>
  </>

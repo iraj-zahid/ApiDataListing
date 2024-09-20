@@ -2,8 +2,10 @@ import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import storage from 'redux-persist/lib/storage';
 import { persistReducer, persistStore } from 'redux-persist';
 import cartSlice from "./slices/cartSlice"
+import modeSlice from "./slices/modeSlice";
 const reducers = combineReducers({
-    cart: cartSlice
+    cart: cartSlice,
+    mode: modeSlice
    });
    const persistConfig = {
     key: 'root',
