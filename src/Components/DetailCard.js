@@ -4,15 +4,18 @@ import { add, quantInc } from "../store/slices/cartSlice"
 import { useDispatch, useSelector } from "react-redux";
 import StarRatings from 'react-star-ratings';
 
-const Card = (prop) => {
+const DetailCard = (prop) => {
+    const [cartHover, setCartHover] = useState(false)
     const cartProduct = useSelector((item) => item.cart)
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    // going to detail page
+
+    // navigate to detail page
     const goToDetail = (selectedProduct) => {
         navigate("/detailpage", { state: selectedProduct })
+        window.scrollTo({top:0, behavior:'smooth'})
     }
-  
+    
     // Here we are filtering API data by id to determine is the product already added to cart?
     const filteredCartItem = cartProduct.filter((filterCartItem) => filterCartItem.data.id === prop.data.id)
 
@@ -27,17 +30,15 @@ const Card = (prop) => {
     }
     return (
         <>
-            <div className="w-[23%] max-[614px]:w-[30%] p-[1%] flex flex-col justify-center dark:rounded-lg dark:text-white relative">
-                <div onClick={() => goToDetail(prop.data)} className="w-full px-[10%] py-[30%] bg-white dark:bg-gray-900 dark:border-[1px] dark:border-gray-500 rounded-xl zoom cursor-pointer"><img src={prop.data.thumbnail} /></div>
-                <h1 className="text-3xl p-[1%] Moderustic truncate">{prop.data.title}</h1>
+        {/* We are using separate card for related products duw to adjust css according to Swip Library */}
+            <div className="w-[70%] max-[900px]:w-[85%] max-[400px]:w-[85%] p-[1%] flex flex-col justify-center dark:rounded-lg dark:text-white relative">
+                <div onClick={() => goToDetail(prop.data)} className="w-full px-[10%] py-[30%] bg-white dark:bg-gray-900 dark:border-[1px] dark:border-gray-500 rounded-xl cursor-pointer"><img src={prop.data.thumbnail} /></div>
+                <h1 className="text-3xl max-[550px]:text-2xl p-[1%] Moderustic truncate">{prop.data.title}</h1>
                 <div> <span><strike className="Moderustic">$700&nbsp;</strike></span><span className="text-xl font-bold Moderustic">&nbsp;${prop.data.price}</span></div>
                 <div className="gap-6 p-[1%]">
                     <span>ratings</span>
                     <span className="Moderustic">({prop.data.stock})</span>
                 </div>
-                <button onClick={addToCart} className="p-[2%] bg-blue-600 hover:bg-blue-700 w-[40%] max-[500px]:w-[50%] text-white font-bold max-[500px]:font-semibold mt-2 mb-2 rounded text-lg flex items-center justify-center">
-                    Add
-                </button>
                 <div className="max-[550px]:hidden">
                     <StarRatings
                         rating={prop.data.rating}
@@ -46,11 +47,11 @@ const Card = (prop) => {
                         starRatedColor="#f1d900"
                     />
                 </div>
-                <div className="min-[550px]:hidden">
+                 <div className="min-[550px]:hidden">
                     <StarRatings
                         rating={prop.data.rating}
                         starDimension="14px"
-                        starSpacing="1px"
+                        starSpacing="0px"
                         starRatedColor="#f1d900"
                     />
                 </div>
@@ -58,4 +59,4 @@ const Card = (prop) => {
         </>
     )
 }
-export default Card
+export default DetailCard

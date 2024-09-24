@@ -1,6 +1,3 @@
-import { FaFacebookSquare, FaInstagramSquare, FaTwitterSquare } from "react-icons/fa";
-import { IoLogoYoutube } from "react-icons/io";
-import { MdContacts } from "react-icons/md";
 const About = () => {
     return (
         <>
@@ -12,13 +9,13 @@ const About = () => {
                     </div>
                     <div className="w-full bg-white dark:bg-gray-900 dark:text-white p-[5%] flex max-[750px]:flex-col items-center justify-center">
                         <div className="w-[50%] max-[750px]:w-[80%] p-[6%]">
-                            <p className="IBM text-3xl font-bold">WHO WE ARE!</p>
-                            <p className="text-xl IBM">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit.</p>
-                            <p className="text-xl IBM">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit.</p>
-                            <p className="text-xl IBM">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit.</p>
-                            <p className="text-xl IBM">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit.</p>
+                            <p className="IBM text-3xl min-[750px]:text-5xl font-bold">WHO WE ARE!</p>
+                            <p className="text-xl min-[750px]:text-2xl IBM">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit.</p>
+                            <p className="text-xl min-[750px]:text-2xl IBM">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit.</p>
+                            <p className="text-xl min-[750px]:text-2xl IBM">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit.</p>
+                            <p className="text-xl min-[750px]:text-2xl IBM">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit.</p>
                         </div>
-                        <div className="w-[50%] max-[750px]:w-[80%] p-[30%] max-[750px]:py-[30%] exImg"></div>
+                        <div className="w-[50%] max-[750px]:w-[80%] p-[20%] max-[750px]:py-[30%] exImg"></div>
                     </div>
                 </div>
                 </div>

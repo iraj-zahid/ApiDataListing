@@ -38,7 +38,7 @@ const Footer = () => {
             </div>
             </div>
             <div className="w-full border-b-[1px] border-gray-800 dark:border-gray-400"></div>
-            <div className="w-full gap-4 p-[4%] flex items-center justify-center">
+            <div className="w-full gap-4 p-[4%] min-[750px]:p-[2%] flex items-center justify-center">
             <FaFacebookSquare className="text-3xl dark:text-white cursor-pointer"/>
             <FaInstagramSquare  className="text-3xl dark:text-white cursor-pointer"/>
             <FaTwitterSquare  className="text-3xl dark:text-white cursor-pointer"/>

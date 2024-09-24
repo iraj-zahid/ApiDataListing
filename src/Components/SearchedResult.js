@@ -1,22 +1,25 @@
 import useApi from "../Utils/Hooks/UseApi/useApi";
-import { useEffect, useState } from "react"
-import { useNavigate } from 'react-router-dom';
+import PriceRangeResult from "./PriceRangeResult";
 import Card from "./Card";
+
 const SearchedResult = (prop) => {
-    const navigate = useNavigate()
+    // the hook for fetching API's data
     const apiData = useApi()
     // filter apis data
-    const filterValue = apiData && apiData.filter((filteredEvent) =>
-        filteredEvent.title.toLowerCase().includes(prop.searchValue)
+    let filterValue = apiData && apiData.filter((filteredEvent) =>
+        filteredEvent.title.toLowerCase().includes(prop.searchAndFilter.searchValue)
     )
+    
     return (
         <>
-            {apiData && filterValue.map((data) => {
+            {prop.searchAndFilter.isFilter? <PriceRangeResult  searchAndFilter={prop.searchAndFilter}/>:
+            filterValue && filterValue.length > 0 ? filterValue.map((data) => {
                 return (
                     <>
                       <Card data={data} />
                     </>
-                )})}
+                )}):<p className="text-white text-4xl font-bold">{prop.searchAndFilter.message}</p>
+            }
         </>
     )
 }

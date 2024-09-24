@@ -3,9 +3,10 @@ import storage from 'redux-persist/lib/storage';
 import { persistReducer, persistStore } from 'redux-persist';
 import cartSlice from "./slices/cartSlice"
 import modeSlice from "./slices/modeSlice";
+
 const reducers = combineReducers({
     cart: cartSlice,
-    mode: modeSlice
+    mode: modeSlice,
    });
    const persistConfig = {
     key: 'root',
@@ -14,11 +15,9 @@ const reducers = combineReducers({
 
 const persistedReducer = persistReducer(persistConfig, reducers);
 
-
 const store = configureStore({
     reducer: persistedReducer,
 });
 const persistor = persistStore(store);
-
 
 export  {store, persistor};

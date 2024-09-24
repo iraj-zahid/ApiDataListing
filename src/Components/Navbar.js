@@ -8,13 +8,17 @@ import { modeSwitch } from "../store/slices/modeSlice";
 import { MdOutlineWbSunny, MdOutlineCancel } from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
+
 const Navbar = () => {
   const [showMenues,setShowMenues] = useState(false)
   const cartData = useSelector((state) => state.cart)
   const mode = useSelector((state) => state.mode)
   const dispatch = useDispatch()
   const navigate = useNavigate()
+
+  // navigate to cart
   const goToCart = () => {
+    // Using condition to make the cart path protected
     if(cartData.length > 0){
       navigate("cart")
     }
@@ -22,16 +26,19 @@ const Navbar = () => {
       navigate("/")
     }
   }
+
+  // Here we are handling Switvh Mode function
   const switchMode = () =>{
     dispatch(modeSwitch(!mode))
   }
+
   const showMenu = () => {
     setShowMenues(true)
     document.body.style.overflow = 'hidden'
   }
   const hideMenu = () => {
     setShowMenues(false)
-      document.body.style.overflow = 'auto'
+    document.body.style.overflow = 'auto'
 
   }
   return (
@@ -50,7 +57,7 @@ const Navbar = () => {
               <Link className="focus:no-underline Nanum max-[750px]:invisible font-bold flex justify-center items-center text-center text-xl dark:text-white hover:text-blue-300 dark:hover:text-blue-300 hover:no-underline" to="/about">ABOUT</Link>
             </li>
             </ul>
-            <ul className="pr-[1%] w-[50%] max-[435px]:text-2xl flex items-center justify-end gap-[5%] max-[750px]:w-[60%] max-[750px]:gap-[8%] text-3xl Moderustic ">
+            <ul className="pr-[3%] w-[50%] max-[435px]:text-2xl flex items-center justify-end gap-[5%] max-[750px]:w-[70%] max-[750px]:gap-[10%] text-3xl Moderustic ">
             <li>
             <div onClick={goToCart} className="cursor-pointer w-full p-[1%] relative ">
             <BsCart4 className="cursor-pointer text-4xl" />
@@ -69,7 +76,8 @@ const Navbar = () => {
           </ul>
         </div>
       </nav>
-      {/* for mobile screen */}
+
+      {/* for mobile screen show a separate section on clicking menu icon*/}
       {showMenues && <div className="min-[750px]:invisible absolute top-0 left-0 min-h-screen w-full absolute rounded-lg text-2xl font-bold IBM z-10">
         <div className="fixed w-full h-full bg-[#6969698e] flex items-center justify-end">
         <div className={`w-[80%] h-full bg-white dark:bg-gray-700 fixed ${showMenues ? 'slideinright' : 'slideoutright'}`}>
@@ -83,6 +91,7 @@ const Navbar = () => {
         </div>
         </div>
       </div>}
+      {/* navbar code end here */}
       <Outlet />
       <Footer />
     </>
