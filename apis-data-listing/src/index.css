@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Moderustic:wght@300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fascinate+Inline&display=swap');
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+
+/* .checkcolor {
+  color: #f1d900;
+} */
+
+@keyframes back {
+  100% {
+    background-position: 2000px 0;
+  }
+}
+
+.cardimg {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.boxshadow {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+/* fonts */
+.Moderustic {
+  font-family: "Moderustic", sans-serif;
+}
+
+.IBM {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.fascinate {
+  font-family: "Fascinate Inline", system-ui;
+}
+
+.Nanum {
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+.zoom {
+  transition: transform .2s;
+}
+
+.zoom:hover {
+  transform: scale(1.2);
+}
+
+.aboutImg {
+  background-image: url("../public/assets/bghome.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.contactImg {
+  background-image: url("../public/assets/contactBg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.contactImgMob {
+  background-image: url("../public/assets/contactBgMob.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: contain;
+  background-position: center;
+}
+
+.exImg {
+  background-image: url("../public//assets/aboutbg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width:950px) {
+  .swiper-container {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+.swiper-button-next,
+.swiper-button-prev {
+  width: 23px;       
+  height: 23px;      
+  border-radius: 50%;     
+  font-size: 15px; 
+}
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 15px; 
+}
+}
+.swiper-slide{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.swiper{
+  padding-left: 30px; 
+  padding-right: 30px;
+}
+.SlideToDown {
+  transform: translateY(-50px);
+  animation: slideDown 1s ease-out forwards;
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 1;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.SlideToUp {
+  transform: translateY(50px);
+  animation: slideUp 1s ease-out forwards;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 1;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
