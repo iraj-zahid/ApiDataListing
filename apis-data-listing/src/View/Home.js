@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
 import Product from "../Components/Product/Product";
+import { useSelector, useDispatch } from "react-redux";
+import Auth from "./Auth.js"
 
 const Home = () => {
+  const isUserLogin = useSelector((reducers) => reducers.isLogin)
+
   // All States here related search and filter by price
   const [searchAndFilter, setSearchAndFilter] = useState({
     searchValue:null,
@@ -50,7 +54,8 @@ const Home = () => {
   }
   return (
     <>
-      <div className="w-full min-h-screen p-6 dark:bg-gray-900">
+        {!isUserLogin ? <Auth/> :
+        <div className="w-full min-h-screen p-6 dark:bg-gray-900 relative">
         <div className="w-full p-[1%] gap-[4%] flex max-[750px]:flex-col items-center justify-center">
 
           {/* The code below if for "SEARCHBAR" */}
@@ -73,6 +78,9 @@ const Home = () => {
         </div>
         <Product searchAndFilter={searchAndFilter} />
       </div>
+        }
+
+      
     </>
   )
 }

@@ -74,7 +74,7 @@ const ProductDetail = () => {
               <ShimmerThumbnail className="w-full " rounded />}
           </div>
           {/* The detail of product showing on the right side of div */}
-          {data ? <div className="w-[70%] max-[614px]:w-[100%] p-[3%] gap-6 ">
+          {location.state ? <div className="w-[70%] max-[614px]:w-[100%] p-[3%] gap-6 ">
             <h1 className="text-5xl Moderustic m-6">{location.state.title}</h1>
             <p className="Moderustic text-3xl m-6">Category:&nbsp;<span className="text-2xl Moderustic">{location.state.category}</span></p>
             <p className="Moderustic text-3xl m-6">About the product:</p>

@@ -4,11 +4,15 @@ import { persistReducer, persistStore } from 'redux-persist';
 import cartSlice from "./slices/cartSlice"
 import modeSlice from "./slices/modeSlice";
 import wantToReview from "./slices/wantToReviewSlice";
+import isLoginSlice from "./slices/isLoginSlice";
+import isSignupSlice from "./slices/isSignupSlice"
 
 const reducers = combineReducers({
     cart: cartSlice,
     mode: modeSlice,
-    wantToReview: wantToReview
+    wantToReview: wantToReview,
+    isLogin:isLoginSlice,
+    isSignup:isSignupSlice
    });
    const persistConfig = {
     key: 'root',

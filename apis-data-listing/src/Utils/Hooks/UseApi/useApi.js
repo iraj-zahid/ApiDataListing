@@ -8,7 +8,6 @@ const useApi = () => {
         axios.get(`${Url}/products`)
             .then(res => {
                 setData(res.data.products)
-                console.log(res.data.products)
             })
     }, [])
     // useEffect(() => {

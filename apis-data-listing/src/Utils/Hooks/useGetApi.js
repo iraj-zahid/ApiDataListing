@@ -8,10 +8,8 @@ const useGetApi = () => {
     useEffect(() => {
         (async () => {
             const datas = await axios.get(`${Url}products/read`).catch(err => {
-                console.log(err)
             })
             setProduct(datas.data.data)
-            console.log(datas.data.data)
         })()}, [])
     
     return product

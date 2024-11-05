@@ -8,9 +8,9 @@
 @import 'swiper/css';
 @import 'swiper/css/navigation';
 
-/* .checkcolor {
-  color: #f1d900;
-} */
+.checkcolor {
+  color:#00000077;
+}
 
 @keyframes back {
   100% {

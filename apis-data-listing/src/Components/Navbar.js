@@ -8,6 +8,7 @@ import { modeSwitch } from "../store/slices/modeSlice";
 import { MdOutlineWbSunny, MdOutlineCancel } from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
+import { isLogin } from "../store/slices/isLoginSlice";
 
 const Navbar = () => {
   const [showMenues,setShowMenues] = useState(false)
@@ -25,6 +26,7 @@ const Navbar = () => {
     else{
       navigate("/")
     }
+    dispatch(isLogin(false))
   }
 
   // Here we are handling Switvh Mode function

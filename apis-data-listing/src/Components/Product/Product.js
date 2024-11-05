@@ -9,8 +9,6 @@ const Product = (prop) => {
     // Here we calling API through "CUSTOM HOOK"
     const apiData = useApi()
     const apiGetData = useGetApi()
-    console.log("oldOne----->",apiData)
-    console.log("newOne----->",apiGetData)
 
     return (
         <>

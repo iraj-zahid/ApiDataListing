@@ -7,9 +7,8 @@ import StarRatings from 'react-star-ratings';
 const Card = (prop) => {
     const images = prop.data.imageName.split(',')
     const UrlImage = `http://localhost:5000/public/images/${images[0]}`
-    console.log(UrlImage)
-    console.log(images)
     const cartProduct = useSelector((item) => item.cart)
+    console.log(cartProduct)
     const dispatch = useDispatch()
     const navigate = useNavigate()
     // going to detail page
@@ -18,7 +17,7 @@ const Card = (prop) => {
     }
   
     // Here we are filtering API data by id to determine is the product already added to cart?
-    const filteredCartItem = cartProduct.filter((filterCartItem) => filterCartItem.data.id === prop.data.id)
+    const filteredCartItem = cartProduct.filter((filterCartItem) => filterCartItem.data._id === prop.data._id)
 
     //Here the function is using to Add product to cart or increase quantity
     const addToCart = () => {

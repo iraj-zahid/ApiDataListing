@@ -3,7 +3,7 @@ import './App.css';
 import Home from "./View/Home"
 import ProductDetail from './Components/Product/ProductDetail';
 import ProductForm from './Components/Product/ProductForm';
-import Signup from './View/Signup';
+import Signup from './Components/Auth/Signup';
 import About from './View/About';
 import Navbar from './Components/Navbar';
 import Cart from './View/Cart';
